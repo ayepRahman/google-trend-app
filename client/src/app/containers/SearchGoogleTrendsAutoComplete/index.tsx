@@ -17,12 +17,9 @@ const SearchGoogleTrendsAutoComplete = ({
   onSelect: (value: any, option: object) => any;
 }) => {
   const [options, setOptions] = React.useState<ISearchOptions>([]);
-  const [getGoogleAutoComplete, { loading, error, data }] = useLazyQuery(
-    GOOGLE_TRENDS_AUTOCOMPLETE,
-    {
-      fetchPolicy: 'cache-and-network',
-    }
-  );
+  const [getGoogleAutoComplete, { data }] = useLazyQuery(GOOGLE_TRENDS_AUTOCOMPLETE, {
+    fetchPolicy: 'cache-and-network',
+  });
 
   const [debouncedCallback] = useDebouncedCallback(value => {
     getGoogleAutoComplete({ variables: { keyword: value } });

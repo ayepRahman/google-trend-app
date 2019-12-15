@@ -18,7 +18,7 @@ const Card = styled(AntDCard)`
 `;
 
 const Home = () => {
-  const [selectedValue, setSelectedValue] = React.useState(null);
+  const [selectedValue, setSelectedValue] = React.useState<string>('');
 
   console.log(selectedValue);
 
@@ -34,14 +34,14 @@ const Home = () => {
         <Row type="flex" justify="center">
           <Col xs={24} md={18}>
             <Card size="small" title="Interest over time">
-              <InterestOverTime />
+              <InterestOverTime selectedValue={selectedValue} />
             </Card>
           </Col>
         </Row>
         <Row type="flex" justify="center">
           <Col xs={24} md={18}>
             <Card size="small" title="Interest by region">
-              <InterestByRegion />
+              <InterestByRegion selectedValue={selectedValue} />
             </Card>
           </Col>
         </Row>

@@ -3,14 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 import { GlobalStyle } from 'styles/global';
 import FullPageLoader from 'app/components/Loaders/FullPageLoader';
 
-const Todos = React.lazy(() => import('app/containers/Todos'));
+const Home = React.lazy(() => import('app/containers/Home'));
 
 const App: React.FC = () => {
   return (
-    <Suspense fallback={FullPageLoader}>
+    <Suspense fallback={<FullPageLoader />}>
       <Switch>
         <Route exact path="/">
-          <Todos />
+          <Home />
         </Route>
       </Switch>
       <GlobalStyle />

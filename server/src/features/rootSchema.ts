@@ -1,4 +1,4 @@
-import { mergeSchemas } from 'graphql-tools';
-import todosSchema from './todos/schema';
+import { mergeSchemas } from "graphql-tools";
+import googleTrendSchema from "./googleTrends/schema";
 
-export default mergeSchemas({ schemas: [todosSchema] });
+export default mergeSchemas({ schemas: [googleTrendSchema] });
